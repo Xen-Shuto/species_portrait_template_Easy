@@ -1,4 +1,4 @@
-= StellarisポートレイトMOD作成用テンプレート
+= StellarisポートレイトMOD作成用テンプレート(Easy版)
 :author: SubUnit-D817
 :toc: left
 :toc-title: 目次
