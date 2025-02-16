@@ -1,0 +1,17 @@
+########################################################################
+# ランダム生成される帝国名用の定義
+# name : 種族名
+# plural : 種族名(複数形)
+# home_planet : 惑星名
+# home_system : 恒星名
+# name_list : ネームリスト
+########################################################################
+HNGT_BIO = {
+	HNGT_BIO_1 = {
+		name = SPEC_HNGT_BIO_1
+		plural = SPEC_HNGT_BIO_pl_1
+		home_planet = SPEC_HNGT_BIO_planet_1
+		home_system = SPEC_HNGT_BIO_system_1
+		name_list =  "HUM1"
+	}
+}

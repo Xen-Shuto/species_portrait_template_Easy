@@ -2,7 +2,8 @@
 --  StellarisポートレイトMOD作成用テンプレート（Easy版）
 --  作った人：SubUnit-D817
 --  更新履歴：00.00.001：2024/08/20：新規作成
---          ：00.00.002：20yy/mm/dd：
+--          ：00.00.002：2025/02/16：都市外観名称、艦船外観名称等に悪影響があったため、内部のディレクトリ名、ファイル名を変更。
+--          ：00.00.003：20yy/mm/dd：
 --
 --  タブは８文字
 ------------------------------------------------------------------------
@@ -42,7 +43,7 @@
 　　MOD作成ガイドのコメント欄で反応下さった方々、おかげで公開する踏ん切りがつきました。
 　　特に参考情報としてご自身が管理されているGitHubを教えて下さったのFatalErrorJP様、
 　　大変参考になりました。また、コードの添削ありがとうございました。
-　　ローカライズ定義のコメントを使わせて頂いてます。
+　　ローカライズ定義のコメントを一部使わせて頂いてます。
 
 ------------------------------------------------------------------------
 --  フォルダ構成
@@ -64,67 +65,77 @@ species_portrait_template
         │
         ├─common
         │  ├─portrait_categories					：種族選択画面表示用定義
-        │  │      00_hinagata_portrait_categories.txt			：　有機生命体用定義
-        │  │      01_hinagata_robotics_portrait_categories.txt	：　機械知性用定義
-        │  │      02_hinagata_lithoid_portrait_categories.txt		：　岩石種族用定義
+        │  │      00_hinagata_portrait_categories_01_bio.txt		：　有機生命体用定義
+        │  │      00_hinagata_portrait_categories_02_robotics.txt	：　機械知性用定義
+        │  │      00_hinagata_portrait_categories_03_lithoid.txt	：　岩石種族用定義
         │  │
         │  ├─portrait_sets						：種族ポートレイト定義
-        │  │      00_hinagata_portrait_sets.txt			：　有機生命体用定義
-        │  │      01_hinagata_robotics_portrait_sets.txt		：　機械知性用定義
-        │  │      02_hinagata_lithoid_portrait_sets.txt		：　岩石種族用定義
+        │  │      00_hinagata_portrait_sets_01_bio.txt		：　有機生命体用定義
+        │  │      00_hinagata_portrait_sets_02_robotics.txt		：　機械知性用定義
+        │  │      00_hinagata_portrait_sets_03_lithoid.txt		：　岩石種族用定義
         │  │
-        │  └─species_classes						：種族定義
-        │          00_hinagata_species_classes.txt			：　有機生命体用定義
-        │          01_hinagata_robotics_species_classes.txt		：　機械知性用定義
-        │          02_hinagata_lithoid_species_classes.txt		：　岩石種族用定義
+        │  ├─species_classes						：種族定義
+        │  │      00_hinagata_species_classes_01_bio.txt		：　有機生命体用定義
+        │  │      00_hinagata_species_classes_02_robotics.txt		：　機械知性用定義
+        │  │      00_hinagata_species_classes_03_lithoid.txt		：　岩石種族用定義
+        │  │
+        │  └─species_names						：名称リスト
+        │          00_hinagata_species_names_01_bio.txt		：　有機生命体用定義
+        │          00_hinagata_species_names_02_robotics.txt		：　機械知性用定義
+        │          00_hinagata_species_names_03_lithoid.txt		：　岩石種族用定義
         │
         ├─gfx
         │  ├─models							：ポートレイト画像格納フォルダ
-        │  │  ├─hinagata						：有機生命体用ポートレイト画像
-        │  │  │      char098.dds					：　テスト画像[役人/男性]	※役職でわける必要は無い
-        │  │  │      char099.dds					：　テスト画像[役人/女性]
-        │  │  │      char198.dds					：　テスト画像[科学者/男性]
-        │  │  │      char199.dds					：　テスト画像[科学者/女性]
-        │  │  │      char298.dds					：　テスト画像[司令官/男性]
-        │  │  │      char299.dds					：　テスト画像[司令官/女性]
-        │  │  │      char398.dds					：　テスト画像[使節/男性]
-        │  │  │      char399.dds					：　テスト画像[使節/女性]
-        │  │  │      char998.dds					：　テスト画像[汎用/男性]
-        │  │  │      char999.dds					：　テスト画像[汎用/女性]
+        │  │  ├─hinagata_01_bio					：有機生命体用ポートレイト画像
+        │  │  │      hinagata_bio_sample001.dds			：　テスト画像[役人/男性]	※役職でわける必要は無い
+        │  │  │      hinagata_bio_sample002.dds			：　テスト画像[役人/女性]
+        │  │  │      hinagata_bio_sample101.dds			：　テスト画像[科学者/男性]
+        │  │  │      hinagata_bio_sample102.dds			：　テスト画像[科学者/女性]
+        │  │  │      hinagata_bio_sample201.dds			：　テスト画像[司令官/男性]
+        │  │  │      hinagata_bio_sample202.dds			：　テスト画像[司令官/女性]
+        │  │  │      hinagata_bio_sample301.dds			：　テスト画像[使節/男性]
+        │  │  │      hinagata_bio_sample302.dds			：　テスト画像[使節/女性]
+        │  │  │      hinagata_bio_sample901.dds			：　テスト画像[汎用/男性]
+        │  │  │      hinagata_bio_sample902.dds			：　テスト画像[汎用/女性]
         │  │  │
-        │  │  ├─hinagata_lithoid					：岩石種族用ポートレイト画像
-        │  │  │      lithoid098.dds					：　テスト画像[役人/男性]	※役職でわける必要は無い
-        │  │  │      lithoid099.dds					：　テスト画像[役人/女性]
-        │  │  │      lithoid198.dds					：　テスト画像[科学者/男性]
-        │  │  │      lithoid199.dds					：　テスト画像[科学者/女性]
-        │  │  │      lithoid298.dds					：　テスト画像[司令官/男性]
-        │  │  │      lithoid299.dds					：　テスト画像[司令官/女性]
-        │  │  │      lithoid398.dds					：　テスト画像[使節/男性]
-        │  │  │      lithoid399.dds					：　テスト画像[使節/女性]
-        │  │  │      lithoid998.dds					：　テスト画像[汎用/男性]
-        │  │  │      lithoid999.dds					：　テスト画像[汎用/女性]
+        │  │  ├─hinagata_02_robotics				：機械知性用ポートレイト画像
+        │  │  │      hinagata_robo_sample001.dds			：　テスト画像[役人/男性]	※役職でわける必要は無い
+        │  │  │      hinagata_robo_sample002.dds			：　テスト画像[役人/女性]
+        │  │  │      hinagata_robo_sample101.dds			：　テスト画像[科学者/男性]
+        │  │  │      hinagata_robo_sample102.dds			：　テスト画像[科学者/女性]
+        │  │  │      hinagata_robo_sample201.dds			：　テスト画像[司令官/男性]
+        │  │  │      hinagata_robo_sample202.dds			：　テスト画像[司令官/女性]
+        │  │  │      hinagata_robo_sample301.dds			：　テスト画像[使節/男性]
+        │  │  │      hinagata_robo_sample302.dds			：　テスト画像[使節/女性]
+        │  │  │      hinagata_robo_sample901.dds			：　テスト画像[汎用/男性]
+        │  │  │      hinagata_robo_sample902.dds			：　テスト画像[汎用/女性]
         │  │  │
-        │  │  └─hinagata_robotics					：機械知性用ポートレイト画像
-        │  │          robo098.dds					：　テスト画像[役人/男性]	※役職でわける必要は無い
-        │  │          robo099.dds					：　テスト画像[役人/女性]
-        │  │          robo198.dds					：　テスト画像[科学者/男性]
-        │  │          robo199.dds					：　テスト画像[科学者/女性]
-        │  │          robo298.dds					：　テスト画像[司令官/男性]
-        │  │          robo299.dds					：　テスト画像[司令官/女性]
-        │  │          robo398.dds					：　テスト画像[使節/男性]
-        │  │          robo399.dds					：　テスト画像[使節/女性]
-        │  │          robo998.dds					：　テスト画像[汎用/男性]
-        │  │          robo999.dds					：　テスト画像[汎用/女性]
+        │  │  └─hinagata_03_lithoid					：岩石種族用ポートレイト画像
+        │  │          hinagata_lit_sample001.dds			：　テスト画像[役人/男性]	※役職でわける必要は無い
+        │  │          hinagata_lit_sample002.dds			：　テスト画像[役人/女性]
+        │  │          hinagata_lit_sample101.dds			：　テスト画像[科学者/男性]
+        │  │          hinagata_lit_sample102.dds			：　テスト画像[科学者/女性]
+        │  │          hinagata_lit_sample201.dds			：　テスト画像[司令官/男性]
+        │  │          hinagata_lit_sample202.dds			：　テスト画像[司令官/女性]
+        │  │          hinagata_lit_sample301.dds			：　テスト画像[使節/男性]
+        │  │          hinagata_lit_sample302.dds			：　テスト画像[使節/女性]
+        │  │          hinagata_lit_sample901.dds			：　テスト画像[汎用/男性]
+        │  │          hinagata_lit_sample902.dds			：　テスト画像[汎用/女性]
         │  │
         │  └─portraits
         │      └─portraits						：ポートレイト定義
-        │              00_hinagata_portraits.txt			：　有機生命体用定義
-        │              01_hinagata_robotics_portraits.txt		：　機械知性用定義
-        │              02_hinagata_lithoid_portraits.txt		：　岩石種族用定義
+        │              00_hinagata_portraits_01_bio.txt		：　有機生命体用定義
+        │              00_hinagata_portraits_02_robotics.txt		：　機械知性用定義
+        │              00_hinagata_portraits_03_lithoid.txt		：　岩石種族用定義
         │
         └─localisation						：ローカライズ定義（言語ごと）
             └─japanese						：日本語用定義（他には英/葡/仏/独/波/露/西/韓/中がある）
-                    hinagata_l_japanese.yml
+                │  hinagata_l_japanese.yml
+                │
+                └─hinagata						：日本語用個別定義
+                        00_hinagata_l_japanese_01_bio.yml		：　有機生命体用定義
+                        00_hinagata_l_japanese_02_robotics.yml		：　機械知性用定義
+                        00_hinagata_l_japanese_03_lithoid.yml		：　岩石種族用定義
 
 ------------------------------------------------------------------------
 --  使い方
@@ -148,7 +159,7 @@ species_portrait_template
 		"Species"		：ここはMODの追加時に設定したタグなので、特に変える必要は無い
 	}
 	name="ポートレイトMOD雛型"	：たぶんワークショップに表示されるMODの名前（わかり易い名前に変更する）
-	supported_version="v3.12.*"	：MODが対応するゲームのバージョン（多少違っても問題ない。24/8/16時点ではv3.12.5）
+	supported_version="v3.*.*"	：MODが対応するゲームのバージョン（多少違っても問題ない。25/2/16時点ではv3.14）
 	path="mod/portrait_hinagata"	：MODのパス（コピーツールで編集済み）
 ********
 
@@ -160,7 +171,7 @@ species_portrait_template
 		"Species"		：ここはMODの追加時に設定したタグなので、特に変える必要は無い
 	}
 	name="ポートレイトMOD雛型"	：ランチャーに表示されるMODの名前（わかり易い名前に変更する）
-	supported_version="v3.12.*"	：MODが対応するゲームのバージョン（多少違っても問題ない。24/8/16時点ではv3.12.5）
+	supported_version="v3.*.*"	：MODが対応するゲームのバージョン（多少違っても問題ない。25/2/16時点ではv3.14）
 ********
 
 ５）ローカライズ定義の編集
