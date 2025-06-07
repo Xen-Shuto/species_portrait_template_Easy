@@ -28,8 +28,8 @@
 #     MOL: "軟体人"
 #     FUN: "菌類種族"
 #     PLANT: "植物種族"
-#     ROBOT: "Robot"
-#     MACHINE: "Machine"
+#     ROBOT: "ロボット"
+#     MACHINE: "機械"
 #     LITHOID: "岩石種族"
 #     SWARM: "群"
 #     EXD: "異次元人"
@@ -38,7 +38,7 @@
 #     TOX: "トキソイド"
 #     CYBERNETIC: "サイバネティック"
 #     SYNTH: "人工生命体"
-#     PRE_[+上記]
+#     PRE_[+上記]: "準知的生命体"
 #---------------------------------------------------------------
 f:hinagata=add_spec
 n:hinagata=add_spec
