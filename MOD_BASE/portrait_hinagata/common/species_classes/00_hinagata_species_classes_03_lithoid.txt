@@ -41,6 +41,9 @@ HNGT_LIT = {
 	#leader_age_min = 5
 	#leader_age_max = 10
 
+	# 艦船セットを利用しない
+	generate_shipset = no
+
 	# 都市外観と艦船外観の初期選択値
 	# 帝国作成時に変更できる
 	graphical_culture = lithoid_01
