@@ -1,7 +1,12 @@
 = StellarisポートレイトMOD作成用テンプレート
-:author: SubUnit-D817
+:author: Xen-Shuto
 :toc: left
 :toc-title: 目次
+
+== 0.注意事項
+　2025/8/1現在、コピー用スクリプトに不具合を確認しています。 +
+　申し訳ございませんが、自力での編集をお願いいたします。 +
+　中身は https://github.com/Xen-Shuto/species_portrait_template[species_portrait_template] と同じです。 +
 
 == 1.このMODについて
 　これはStellarisのポートレイトMOD作成用の雛型です。 +
